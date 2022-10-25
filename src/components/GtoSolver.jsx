@@ -32,25 +32,37 @@ export function GtoSolver(props) {
       <div className="left-range">
         {" "}
         {props.positionChoice && (
-          <div>
-            Raise:{" "}
-            {
-              props.ranges[`_${props.numberOfBigs}bb`][
-                props.positionChoice.toLowerCase()
-              ].raise
-            }{" "}
-            Call:{" "}
-            {
-              props.ranges[`_${props.numberOfBigs}bb`][
-                props.positionChoice.toLowerCase()
-              ].call
-            }{" "}
-            All-in:{" "}
-            {
-              props.ranges[`_${props.numberOfBigs}bb`][
-                props.positionChoice.toLowerCase()
-              ].allin
-            }
+          <div className="title">
+            <p>
+              Raise:{" "}
+              <span className="raiseFont">
+                {
+                  props.ranges[`_${props.numberOfBigs}bb`][
+                    props.positionChoice.toLowerCase()
+                  ].raise
+                }
+              </span>{" "}
+            </p>
+            <p>
+              Call:{" "}
+              <span className="callFont">
+                {
+                  props.ranges[`_${props.numberOfBigs}bb`][
+                    props.positionChoice.toLowerCase()
+                  ].call
+                }
+              </span>{" "}
+            </p>
+            <p>
+              All-in:{" "}
+              <span className="allinFont">
+                {
+                  props.ranges[`_${props.numberOfBigs}bb`][
+                    props.positionChoice.toLowerCase()
+                  ].allin
+                }
+              </span>
+            </p>
           </div>
         )}
       </div>

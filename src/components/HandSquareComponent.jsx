@@ -1,10 +1,6 @@
 import React from "react";
 
-export default function HandSquareComponent({
-  hand,
-  updateSelectedCombos,
-  hoverMode,
-}) {
+export default function HandSquareComponent({ hand, updateSelectedCombos }) {
   return (
     <>
       <div
@@ -17,7 +13,6 @@ export default function HandSquareComponent({
             ? "call handsquare"
             : "handsquare"
         } handsquare`}
-        onMouseEnter={() => hoverMode && updateSelectedCombos(hand, true)}
         onClick={() => updateSelectedCombos(hand)}
       >
         {hand.hand.toUpperCase()}
