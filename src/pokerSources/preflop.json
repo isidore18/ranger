@@ -76,10 +76,106 @@
   },
   "_17bb": {
     "utg": { "raise": 15.8, "call": 0, "allin": 0 },
-    "utg1": { "raise": 20.7, "call": 0, "allin": 0 },
-    "lj": { "raise": 23.4, "call": 0, "allin": 0 },
-    "hj": { "raise": 28.3, "call": 0, "allin": 0 },
-    "co": { "raise": 32, "call": 2, "allin": 0 },
-    "btn": { "raise": 37.9, "call": 0, "allin": 0 }
+    "utg1": { "raise": 17.7, "call": 0, "allin": 0 },
+    "lj": { "raise": 15.7, "call": 5.6, "allin": 0 },
+    "hj": { "raise": 17.6, "call": 8.1, "allin": 0 },
+    "co": { "raise": 25.5, "call": 7.2, "allin": 0 },
+    "btn": { "raise": 29.2, "call": 15.1, "allin": 0 }
+  },
+  "_14bb": {
+    "utg": { "raise": 11.4, "call": 4.6, "allin": 0 },
+    "utg1": { "raise": 11, "call": 7.6, "allin": 0 },
+    "lj": { "raise": 16, "call": 4.9, "allin": 0 },
+    "hj": { "raise": 10.8, "call": 16.9, "allin": 0 },
+    "co": { "raise": 18.2, "call": 16.7, "allin": 0 },
+    "btn": { "raise": 23.4, "call": 19.9, "allin": 0 }
+  },
+  "_12bb": {
+    "utg": { "raise": 9.5, "call": 7.1, "allin": 0 },
+    "utg1": { "raise": 14, "call": 4.5, "allin": 0 },
+    "lj": { "raise": 14.1, "call": 8.2, "allin": 0 },
+    "hj": { "raise": 16.4, "call": 10.9, "allin": 0 },
+    "co": { "raise": 22.8, "call": 11.1, "allin": 0 },
+    "btn": { "raise": 26.6, "call": 15.2, "allin": 0 }
+  },
+  "_11bb": {
+    "utg": { "raise": 9.5, "call": 7.1, "allin": 10 },
+    "utg1": { "raise": 14, "call": 4.5, "allin": 23 },
+    "lj": { "raise": 14.1, "call": 15, "allin": 0 },
+    "hj": { "raise": 16.4, "call": 10.9, "allin": 56 },
+    "co": { "raise": 22.8, "call": 11.1, "allin": 5 },
+    "btn": { "raise": 26.6, "call": 15.2, "allin": 0 }
+  },
+  "_10bb": {
+    "utg": { "raise": 13.1, "call": 4.4, "allin": 0 },
+    "utg1": { "raise": 16.2, "call": 3.8, "allin": 0 },
+    "lj": { "raise": 20.7, "call": 2.3, "allin": 0 },
+    "hj": { "raise": 24.2, "call": 3.6, "allin": 0 },
+    "co": { "raise": 28.2, "call": 4.5, "allin": 0 },
+    "btn": { "raise": 32.7, "call": 8.4, "allin": 0 }
+  },
+  "_9bb": {
+    "utg": { "raise": 16, "call": 1.9, "allin": 0 },
+    "utg1": { "raise": 19.4, "call": 1.9, "allin": 0 },
+    "lj": { "raise": 21.7, "call": 2.1, "allin": 0 },
+    "hj": { "raise": 26.8, "call": 2.1, "allin": 0 },
+    "co": { "raise": 31.1, "call": 1, "allin": 0 },
+    "btn": { "raise": 35.8, "call": 5.9, "allin": 0 }
+  },
+  "_8bb": {
+    "utg": { "raise": 20, "call": 0, "allin": 0 },
+    "utg1": { "raise": 21.7, "call": 0.1, "allin": 0 },
+    "lj": { "raise": 25.8, "call": 0, "allin": 0 },
+    "hj": { "raise": 29.9, "call": 0.1, "allin": 0 },
+    "co": { "raise": 33, "call": 0.1, "allin": 0 },
+    "btn": { "raise": 39.3, "call": 3.5, "allin": 0 }
+  },
+  "_7bb": {
+    "utg": { "raise": 20.6, "call": 0, "allin": 0 },
+    "utg1": { "raise": 23.7, "call": 0, "allin": 0 },
+    "lj": { "raise": 27.9, "call": 0, "allin": 0 },
+    "hj": { "raise": 30.9, "call": 0, "allin": 0 },
+    "co": { "raise": 33.9, "call": 0, "allin": 0 },
+    "btn": { "raise": 44.5, "call": 0, "allin": 0 }
+  },
+  "_6bb": {
+    "utg": { "raise": 23, "call": 0, "allin": 0 },
+    "utg1": { "raise": 26, "call": 0, "allin": 0 },
+    "lj": { "raise": 30, "call": 0, "allin": 0 },
+    "hj": { "raise": 32.2, "call": 0, "allin": 0 },
+    "co": { "raise": 35.6, "call": 0, "allin": 0 },
+    "btn": { "raise": 45.4, "call": 0, "allin": 0 }
+  },
+  "_5bb": {
+    "utg": { "raise": 0, "call": 0, "allin": 24.9 },
+    "utg1": { "raise": 0, "call": 0, "allin": 27 },
+    "lj": { "raise": 0, "call": 0, "allin": 31.6 },
+    "hj": { "raise": 0, "call": 0, "allin": 32.7 },
+    "co": { "raise": 0, "call": 0, "allin": 39 },
+    "btn": { "raise": 0, "call": 0, "allin": 47.2 }
+  },
+  "_4bb": {
+    "utg": { "raise": 0, "call": 0, "allin": 27.8 },
+    "utg1": { "raise": 0, "call": 0, "allin": 30.8 },
+    "lj": { "raise": 0, "call": 0, "allin": 32.7 },
+    "hj": { "raise": 0, "call": 0, "allin": 35.4 },
+    "co": { "raise": 0, "call": 0, "allin": 41.2 },
+    "btn": { "raise": 0, "call": 0, "allin": 49.8 }
+  },
+  "_3bb": {
+    "utg": { "raise": 0, "call": 0, "allin": 30 },
+    "utg1": { "raise": 0, "call": 0, "allin": 32.9 },
+    "lj": { "raise": 0, "call": 0, "allin": 36.9 },
+    "hj": { "raise": 0, "call": 0, "allin": 39.2 },
+    "co": { "raise": 0, "call": 0, "allin": 43.8 },
+    "btn": { "raise": 0, "call": 0, "allin": 51.7 }
+  },
+  "_2bb": {
+    "utg": { "raise": 0, "call": 0, "allin": 36.5 },
+    "utg1": { "raise": 0, "call": 0, "allin": 38 },
+    "lj": { "raise": 0, "call": 0, "allin": 40.1 },
+    "hj": { "raise": 0, "call": 0, "allin": 44.9 },
+    "co": { "raise": 0, "call": 0, "allin": 50.3 },
+    "btn": { "raise": 0, "call": 0, "allin": 57.2 }
   }
 }

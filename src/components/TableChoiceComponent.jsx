@@ -8,6 +8,7 @@ export default function TableChoice({
   const tableSizes = [8, 6, 5, 4, 3];
   return (
     <div>
+      Nombre de joueurs :
       {tableSizes.map((element) => {
         return (
           <Button
@@ -17,7 +18,7 @@ export default function TableChoice({
             key={element}
             active={selectedTableSize === element}
           >
-            {element} handed
+            {element}
           </Button>
         );
       })}

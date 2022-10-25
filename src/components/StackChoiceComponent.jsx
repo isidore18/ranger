@@ -3,10 +3,11 @@ import Button from "react-bootstrap/Button";
 export default function StackChoice({ setStackSize, stacksize }) {
   const stackChoices = ["small", "medium", "big"];
   return (
-    <div>
-      {stackChoices.map((element) => {
-        return (
-          <>
+    <div className="stackchoice-container">
+      Stack :
+      <>
+        {stackChoices.map((element) => {
+          return (
             <Button
               variant="outline-light"
               onClick={() => setStackSize(element)}
@@ -14,10 +15,10 @@ export default function StackChoice({ setStackSize, stacksize }) {
               key={element}
             >
               {element}
-            </Button>{" "}
-          </>
-        );
-      })}
+            </Button>
+          );
+        })}
+      </>
     </div>
   );
 }

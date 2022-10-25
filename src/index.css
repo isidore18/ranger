@@ -1,3 +1,19 @@
+:root {
+  --bg-color-raise: #f03c3c;
+  --bg-color-call: #5ab966;
+  --bg-color-fold: #3d7cb8;
+  --bg-color-allin: #7d1f1f;
+}
+.raise {
+  background-color: var(--bg-color-raise);
+}
+.allin {
+  background-color: var(--bg-color-allin);
+}
+.call {
+  background-color: var(--bg-color-call);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,12 +30,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.btn {
+  margin: 0.125rem;
+}
+.btn-go {
+  border-radius: 50%;
+  width: 50%;
+  height: 25%;
+  margin: 0 auto;
+}
 
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: darkslategrey !important;
+  background-color: darkslategrey;
   width: 100vw;
   height: 100vh;
   color: antiquewhite;
@@ -29,10 +54,22 @@ code {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-evenly;
   border: 1px solid antiquewhite;
   height: 100%;
   padding: 1rem;
+}
+.left-choices {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.left-range {
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .handgrid {
@@ -41,11 +78,28 @@ code {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(13, 1fr);
+  margin-bottom: 2rem;
+}
+
+.hovermode-switch {
+  margin-bottom: 2rem;
+}
+
+.stackchoice-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .handsquare {
-  border: 1px solid;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid gray;
+}
+.handsquare:hover {
+  border: 1px solid white;
+}
+.handsquare.selected {
+  background-color: red;
 }

@@ -7,13 +7,13 @@ export default function NumberOfBbbsChoice({
 }) {
   return (
     <div>
+      Tapis (bb) :
       {choices.map((element) => {
         return (
           <Button
             key={element}
             onClick={() => setNumberOfBigs(element)}
             variant="outline-light"
-            className="m-1"
             active={numberOfBigs === element}
           >
             {element}

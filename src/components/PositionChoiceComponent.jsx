@@ -5,12 +5,13 @@ export default function PostionChoiceComponent({
   setPositionChoice,
   positionChoice,
 }) {
-  const positions = ["UTG", "UTG1", "LJ", "HJ", "CO", "BTN", "SB", "BB"];
+  const positions = ["UTG", "UTG1", "LJ", "HJ", "CO", "BTN"];
 
   const renderedPositions = positions.slice(8 - selectedTableSize);
 
   return (
     <div>
+      Position :
       {renderedPositions.map((element) => {
         return (
           <Button
@@ -18,7 +19,6 @@ export default function PostionChoiceComponent({
             variant="outline-light"
             className="m-1"
             onClick={() => setPositionChoice(element)}
-            disabled={["SB", "BB"].includes(element)}
             active={element.toLowerCase() === positionChoice.toLowerCase()}
           >
             {element}
