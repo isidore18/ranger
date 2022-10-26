@@ -1,18 +1,11 @@
-import StackChoice from "./StackChoiceComponent";
 import NumberOfBbbsChoice from "./NumberOfBbbsChoiceComponent";
 import TableChoice from "./TableChoiceComponent";
 import PositionChoice from "./PositionChoiceComponent";
-import Button from "react-bootstrap/Button";
 
 export function GtoSolver(props) {
   return (
-    <div className="left-choices">
-      <StackChoice
-        setStackSize={props.setStacksize}
-        stacksize={props.stacksize}
-      />
+    <>
       <NumberOfBbbsChoice
-        stacksize={props.stacksize}
         setNumberOfBigs={props.setNumberOfBigs}
         choices={props.choices}
         numberOfBigs={props.numberOfBigs}
@@ -29,43 +22,40 @@ export function GtoSolver(props) {
         positionChoice={props.positionChoice}
       />
 
-      <div className="left-range">
-        {" "}
-        {props.positionChoice && (
-          <div className="title">
-            <p>
-              Raise:{" "}
-              <span className="raiseFont">
-                {
-                  props.ranges[`_${props.numberOfBigs}bb`][
-                    props.positionChoice.toLowerCase()
-                  ].raise
-                }
-              </span>{" "}
-            </p>
-            <p>
-              Call:{" "}
-              <span className="callFont">
-                {
-                  props.ranges[`_${props.numberOfBigs}bb`][
-                    props.positionChoice.toLowerCase()
-                  ].call
-                }
-              </span>{" "}
-            </p>
-            <p>
-              All-in:{" "}
-              <span className="allinFont">
-                {
-                  props.ranges[`_${props.numberOfBigs}bb`][
-                    props.positionChoice.toLowerCase()
-                  ].allin
-                }
-              </span>
-            </p>
+      {props.positionChoice && (
+        <div className="flex-column jcse">
+          <div className="big-title">
+            Raise:{" "}
+            <span className="raiseFont">
+              {
+                props.ranges[`_${props.numberOfBigs}bb`][
+                  props.positionChoice.toLowerCase()
+                ].raise
+              }
+            </span>{" "}
           </div>
-        )}
-      </div>
-    </div>
+          <div className="big-title">
+            Call:{" "}
+            <span className="callFont">
+              {
+                props.ranges[`_${props.numberOfBigs}bb`][
+                  props.positionChoice.toLowerCase()
+                ].call
+              }
+            </span>{" "}
+          </div>
+          <div className="big-title">
+            All-in:{" "}
+            <span className="allinFont">
+              {
+                props.ranges[`_${props.numberOfBigs}bb`][
+                  props.positionChoice.toLowerCase()
+                ].allin
+              }
+            </span>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

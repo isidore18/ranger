@@ -10,6 +10,8 @@ export default function RangeGridComponent({
   setSelectedCombos,
   selectedRange,
   resetSelectedCombos,
+  selectPockets,
+  selectHighCard,
 }) {
   const isUsedForRangeBuilder =
     window.location.pathname.includes("range-builder");
@@ -27,12 +29,36 @@ export default function RangeGridComponent({
     setHoverMode((hoverMode) => !hoverMode);
   };
 
-  useEffect(() => {
-    console.log(selectedCombos);
-  }, [selectedCombos]);
+  useEffect(() => {}, [selectedCombos]);
+
+  const handfiltersArray = [
+    "a",
+    "k",
+    "j",
+    "t",
+    "9",
+    "8",
+    "7",
+    "6",
+    "5",
+    "4",
+    "3",
+    "2",
+  ];
+  const HandFilter = (props) => {
+    return (
+      <Button
+        variant="outline-light"
+        className="m-1"
+        onClick={() => selectHighCard(props.hand)}
+      >
+        {props.hand}{" "}
+      </Button>
+    );
+  };
 
   return (
-    <div className="col">
+    <div className={`${isUsedForRangeBuilder && "range-builder-container"}`}>
       {isUsedForRangeBuilder && (
         <Form className="hovermode-switch">
           <Form.Check
@@ -44,7 +70,10 @@ export default function RangeGridComponent({
           />
         </Form>
       )}
-
+      <div className="range-builder-results-container">
+        <div>{numberOfCombinations} / 1326 </div>
+        <div>{((numberOfCombinations * 100) / 1326).toFixed(1)}% </div>
+      </div>
       <div className="handgrid">
         {Object.values(handsData).map((element) => {
           return element.map((e) => {
@@ -58,41 +87,37 @@ export default function RangeGridComponent({
                 selected={selectedCombos.map((el) => el.hand).includes(e.hand)}
               />
             ) : (
-              <HandSquareComponent
-                hand={e}
-                key={e.hand}
-                selectedRange={selectedRange}
-              />
+              <HandSquareComponent hand={e} key={e.hand} />
             );
           });
         })}
       </div>
-      {isUsedForRangeBuilder && (
-        <Form className="hovermode-switch">
-          <Form.Check
-            type="switch"
-            id="hovermode-switch"
-            label="hover mode"
-            ref={toggleHoverModeRef}
-            onChange={toggleHoverMode}
-          />
-        </Form>
-      )}
-      <div className="range-builder-results-container">
-        <div>{numberOfCombinations} / 1326 combinaisons</div>
-        <div>{((numberOfCombinations * 100) / 1326).toFixed(1)}% </div>
-      </div>
+
       {/* <p>
         {combinations.map((element) => element.hand).join(" ")}{" "}
         {combinations.length}
       </p> */}
-      <Button
-        variant="outline-light"
-        className="m-1"
-        onClick={() => resetSelectedCombos()}
-      >
-        reset{" "}
-      </Button>
+      {isUsedForRangeBuilder && (
+        <div className="range-builder-results-controls">
+          <Button
+            variant="outline-light"
+            className="m-1"
+            onClick={() => resetSelectedCombos()}
+          >
+            reset{" "}
+          </Button>
+          <Button
+            variant="outline-light"
+            className="m-1"
+            onClick={() => selectPockets()}
+          >
+            Pockets{" "}
+          </Button>
+          {[...handfiltersArray].map((element) => (
+            <HandFilter hand={element} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

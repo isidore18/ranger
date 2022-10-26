@@ -10,8 +10,8 @@ export default function PostionChoiceComponent({
   const renderedPositions = positions.slice(8 - selectedTableSize);
 
   return (
-    <div>
-      Position :
+    <div className="flex-column">
+      <span className="title"> Position</span>
       {renderedPositions.map((element) => {
         return (
           <Button

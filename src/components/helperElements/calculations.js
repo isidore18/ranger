@@ -14,16 +14,11 @@ export function createHandsFunction() {
   return res;
 }
 
-export function countHandsFunction(
-  positionChoice,
-  numberOfBigs,
-  stacksize,
-  hands
-) {
+export function countHandsFunction(positionChoice, numberOfBigs, hands) {
   let selectedRange = 0;
   let res = 0;
   let rangeToPush = [];
-  if (!(positionChoice && numberOfBigs && stacksize)) return;
+  if (!(positionChoice && numberOfBigs)) return;
   selectedRange = ranges[`_${numberOfBigs}bb`][positionChoice.toLowerCase()];
   for (let i = 0; i < hands.length; i++) {
     const percentage = (hands[i].numberOfCombos / 1326) * 100;

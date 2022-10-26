@@ -4,6 +4,7 @@
   --bg-color-fold: #3d7cb8;
   --bg-color-allin: indigo;
 }
+
 .raise {
   background-color: var(--bg-color-raise);
 }
@@ -25,6 +26,9 @@
 .title {
   font-size: 2rem;
 }
+.big-title {
+  font-size: 2.5rem;
+}
 
 body {
   margin: 0;
@@ -42,66 +46,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.btn {
-  margin: 0.125rem;
-}
-.btn-go {
-  border-radius: 50%;
-  width: 50%;
-  height: 25%;
-  margin: 0 auto;
-}
 
-.app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: darkslategrey;
-  width: 100vw;
-  height: 100vh;
-  color: antiquewhite;
-  padding: 3%;
+.numberOfBigs-btn {
+  max-width: fit-content;
+  min-width: 4rem;
+}
+.btn {
+  max-width: fit-content;
 }
 .col {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid antiquewhite;
   height: 100%;
-  padding: 1rem;
-}
-.left-choices {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  border-radius: 1rem;
-  padding: 1rem;
-}
-.left-range {
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }
 
 .handgrid {
   background-color: #3d7cb8;
-  height: 100%;
   width: 100%;
-  max-width: 960px;
+  height: 60vh;
   display: grid;
   grid-template-columns: repeat(13, 1fr);
-  margin-bottom: 2rem;
+  /* margin-bottom: 1rem; */
 }
 
 .hovermode-switch {
-  margin-bottom: 1rem;
+  margin: 1rem auto;
+}
+
+.gto-solver-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: darkslategrey;
+  color: antiquewhite;
+}
+
+.gto-solver-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 .stackchoice-container {
   display: flex;
   align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.jcse {
   justify-content: space-between;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.ctr {
+  align-items: flex-start;
 }
 
 .handsquare {
@@ -109,6 +113,7 @@ code {
   justify-content: center;
   align-items: center;
   border: 1px solid gray;
+  min-height: 32px;
 }
 .handsquare:hover {
   border: 1px solid white;
@@ -116,13 +121,49 @@ code {
 .selected {
   background-color: red;
 }
+.range-builder-container {
+  width: 100%;
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: darkslategray;
+  color: antiquewhite;
+}
 .range-builder-results-container {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
   width: 100%;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  padding: 1rem;
 }
-.range-builder-results-container :nth-child(2) {
-  font-size: 3rem;
+.range-builder-results-controls {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar.navbar-dark {
+  width: 100vw !important;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid antiquewhite;
+  max-height: 75px;
+  background-color: darkslategray;
+}
+
+.navbar-logo {
+  max-height: 75px;
+  position: absolute;
+  left: 2rem;
+  top: 0;
+}
+
+.number-of-bigs-choices {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(30px, 1fr));
+  gap: 0.5rem;
+}
+.numberOfBigs-btn {
+  margin: 0.125rem;
 }

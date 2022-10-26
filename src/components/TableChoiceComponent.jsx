@@ -7,8 +7,11 @@ export default function TableChoice({
 }) {
   const tableSizes = [8, 6, 5, 4, 3];
   return (
-    <div>
-      Nombre de joueurs :
+    <div className="flex-column ctr">
+      <span className="title" style={{ maxWidth: "10%" }}>
+        {" "}
+        Players/table
+      </span>
       {tableSizes.map((element) => {
         return (
           <Button
