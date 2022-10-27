@@ -1,0 +1,132 @@
+[
+  {
+    "hand": "aa",
+    "numberOfCombos": 6,
+    "rank": 1,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 0.4524886877828055
+  },
+  {
+    "hand": "kk",
+    "numberOfCombos": 6,
+    "rank": 2,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 0.904977375565611
+  },
+  {
+    "hand": "qq",
+    "numberOfCombos": 6,
+    "rank": 3,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 1.3574660633484164
+  },
+  {
+    "hand": "jj",
+    "numberOfCombos": 6,
+    "rank": 4,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 1.809954751131222
+  },
+  {
+    "hand": "tt",
+    "numberOfCombos": 6,
+    "rank": 10,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 4.977375565610861
+  },
+  {
+    "hand": "99",
+    "numberOfCombos": 6,
+    "rank": 13,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 6.03318250377074
+  },
+  {
+    "hand": "88",
+    "numberOfCombos": 6,
+    "rank": 17,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 8.597285067873305
+  },
+  {
+    "hand": "77",
+    "numberOfCombos": 6,
+    "rank": 24,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 11.46304675716441
+  },
+  {
+    "hand": "66",
+    "numberOfCombos": 6,
+    "rank": 29,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 14.328808446455513
+  },
+  {
+    "hand": "55",
+    "numberOfCombos": 6,
+    "rank": 35,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 18.099547511312224
+  },
+  {
+    "hand": "44",
+    "numberOfCombos": 6,
+    "rank": 36,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": true,
+    "isCallHand": false,
+    "percentage": 18.552036199095028
+  },
+  {
+    "hand": "33",
+    "numberOfCombos": 6,
+    "rank": 42,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": false,
+    "isCallHand": false,
+    "percentage": 21.116138763197586
+  },
+  {
+    "hand": "22",
+    "numberOfCombos": 6,
+    "rank": 44,
+    "range": { "raise": 19.1, "call": 0, "allin": 0 },
+    "isAllinHand": false,
+    "isRaiseHand": false,
+    "isCallHand": false,
+    "percentage": 21.870286576168926
+  }
+]

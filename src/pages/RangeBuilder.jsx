@@ -1,7 +1,7 @@
-import { useState } from "react";
-import RangeGridComponent from "../components/RangeGridComponent";
+import { useState, useEffect } from "react";
 import handsData from "../pokerSources/hands.json";
 import NavBar from "../components/NavBar";
+import BuilderGrid from "../components/BuilderGrid";
 
 const hands = Object.values(handsData)
   .map((element) => element)
@@ -24,25 +24,60 @@ export default function RangeBuilderApp() {
     setSelectedCombos([]);
   };
 
-  const selectPockets = () => {
+  const selectPockets = (action) => {
     const pockets = hands.filter((e) => e.hand[0] === e.hand[1]);
-    setSelectedCombos([...selectedCombos, ...pockets]);
+    setSelectedCombos([
+      ...selectedCombos,
+      ...pockets.map((p) => {
+        p[action] = true;
+        return p;
+      }),
+    ]);
   };
 
-  const selectHighCard = (highcard) => {
-    const aces = hands.filter((e) => e.hand[0] === highcard);
-    setSelectedCombos([...selectedCombos, ...aces]);
+  const selectHighCard = (highcard, action) => {
+    const cards = hands.filter((e) => e.hand[0] === highcard);
+    setSelectedCombos([
+      ...selectedCombos,
+      ...cards.map((p) => {
+        p[action] = true;
+        return p;
+      }),
+    ]);
+    return cards;
   };
+
+  function exportUserInfo() {
+    const cp = [...selectedCombos];
+    cp.map((element) => {
+      return {
+        hand: element.hand,
+        numberOfCombos: element.numberObCombos,
+        rank: element.range,
+      };
+    });
+    const fileData = JSON.stringify(selectedCombos);
+    const blob = new Blob([fileData], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.download = "user-info.json";
+    link.href = url;
+    link.click();
+  }
+  useEffect(() => {
+    console.log(selectedCombos);
+  }, [selectedCombos]);
 
   return (
     <>
       <NavBar />
-      <RangeGridComponent
+      <BuilderGrid
         selectedCombos={selectedCombos}
         setSelectedCombos={updateSelectedCombos}
         resetSelectedCombos={resetSelectedCombos}
         selectHighCard={selectHighCard}
         selectPockets={selectPockets}
+        exportUserInfo={exportUserInfo}
       />
     </>
   );

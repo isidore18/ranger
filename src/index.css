@@ -29,6 +29,12 @@
 .big-title {
   font-size: 2.5rem;
 }
+.ai-c {
+  align-items: center;
+}
+.jc-c {
+  justify-content: center;
+}
 
 body {
   margin: 0;
@@ -50,6 +56,8 @@ code {
 .numberOfBigs-btn {
   max-width: fit-content;
   min-width: 4rem;
+  margin-left: auto;
+  align-self: flex-end;
 }
 .btn {
   max-width: fit-content;
@@ -64,7 +72,6 @@ code {
 .handgrid {
   background-color: #3d7cb8;
   width: 100%;
-  height: 60vh;
   display: grid;
   grid-template-columns: repeat(13, 1fr);
   /* margin-bottom: 1rem; */
@@ -72,6 +79,7 @@ code {
 
 .hovermode-switch {
   margin: 1rem auto;
+  width: fit-content;
 }
 
 .gto-solver-container {
@@ -84,9 +92,11 @@ code {
 
 .gto-solver-options {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 1rem;
+}
+.gto-solver-body {
+  height: calc(100vh - 75px);
 }
 
 .stackchoice-container {
@@ -98,14 +108,14 @@ code {
   flex-direction: column;
 }
 .jcse {
+  justify-content: space-evenly;
+}
+.jcsb {
   justify-content: space-between;
 }
 .flex-row {
   display: flex;
   flex-direction: row;
-}
-.ctr {
-  align-items: flex-start;
 }
 
 .handsquare {
@@ -113,7 +123,7 @@ code {
   justify-content: center;
   align-items: center;
   border: 1px solid gray;
-  min-height: 32px;
+  min-height: 30px;
 }
 .handsquare:hover {
   border: 1px solid white;
@@ -126,9 +136,10 @@ code {
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   background-color: darkslategray;
   color: antiquewhite;
+  padding: 2rem;
 }
 .range-builder-results-container {
   display: flex;
@@ -140,7 +151,12 @@ code {
 .range-builder-results-controls {
   display: flex;
   width: 100%;
-  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-direction: column;
+}
+.resetButton {
+  margin-bottom: auto;
 }
 
 .navbar.navbar-dark {
@@ -159,11 +175,20 @@ code {
   top: 0;
 }
 
-.number-of-bigs-choices {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(30px, 1fr));
+.flex-row-jc-e {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.flex-row-jc-e > .title:first-of-type {
+  margin-right: auto;
 }
 .numberOfBigs-btn {
   margin: 0.125rem;
+}
+.blind-digit {
+  padding: 0.25rem;
 }

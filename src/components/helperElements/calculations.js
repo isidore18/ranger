@@ -15,8 +15,8 @@ export function createHandsFunction() {
 }
 
 export function countHandsFunction(positionChoice, numberOfBigs, hands) {
-  let selectedRange = 0;
-  let res = 0;
+  let selectedRange,
+    res = 0;
   let rangeToPush = [];
   if (!(positionChoice && numberOfBigs)) return;
   selectedRange = ranges[`_${numberOfBigs}bb`][positionChoice.toLowerCase()];
@@ -38,4 +38,12 @@ export function countHandsFunction(positionChoice, numberOfBigs, hands) {
     }
   }
   return rangeToPush;
+}
+
+export function changeIndex(wheelDelta) {
+  if (wheelDelta < 0) {
+    return -1;
+  } else {
+    return +1;
+  }
 }

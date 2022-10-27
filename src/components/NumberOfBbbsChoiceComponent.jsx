@@ -1,50 +1,72 @@
-import { Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { changeIndex } from "./helperElements/calculations";
+export default function NumberOfBbbsChoice({
+  setNumberOfBigs,
+  numberOfBigs,
+  stackChoices,
+}) {
+  const [selectedIndex, setSelectedIndex] = useState(
+    stackChoices.reverse().indexOf(numberOfBigs)
+  );
+  const [event, setEvent] = useState(null);
 
-export default function NumberOfBbbsChoice({ setNumberOfBigs, numberOfBigs }) {
-  const bigStacksChoices = [
-    100, 80, 60, 50, 40, 35, 30, 5, 20, 17, 14, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3,
-    2,
-  ];
-  const mediumStacksChoices = [25, 20, 17, 14, 12, 11, 10];
-  const smallStacksChoices = [9, 8, 7, 6, 5, 4, 3, 2];
-  const arr = [bigStacksChoices, mediumStacksChoices, smallStacksChoices];
-
-  const ButtonCol = ({ choices }) => {
-    return (
-      <div className="flex-column">
-        {choices.map((element) => {
-          return (
-            <Button
-              key={element}
-              onClick={() => setNumberOfBigs(element)}
-              variant="outline-light"
-              active={numberOfBigs === element}
-              className="numberOfBigs-btn"
-            >
-              {element}
-            </Button>
-          );
-        })}
-      </div>
-    );
+  const callChangeIndex = (e) => {
+    const res = changeIndex(e.nativeEvent.wheelDelta);
+    setEvent(res);
   };
 
+  const keypress = (key) => {
+    const res = key.key === "ArrowUp" ? 1 : -1;
+    setEvent(res);
+  };
+
+  useEffect(() => {
+    document.getElementById("bb-zone").addEventListener("keydown", keypress);
+  }, []);
+
+  useEffect(() => {
+    if (event === -1 && selectedIndex < stackChoices.length - 1) {
+      setSelectedIndex((selectedIndex) => selectedIndex + 1);
+      setNumberOfBigs(stackChoices[selectedIndex + 1]);
+    } else if (event === +1 && selectedIndex > 0) {
+      setSelectedIndex((selectedIndex) => selectedIndex - 1);
+      setNumberOfBigs(stackChoices[selectedIndex - 1]);
+    }
+    setEvent(0);
+
+    return;
+  }, [event, selectedIndex, stackChoices, setNumberOfBigs]);
+
+  function chooseNumberOfBigs(params, index) {
+    console.log(params);
+    setNumberOfBigs(params);
+setSelectedIndex(index)
+  }
+
   return (
-    <div className="flex-column">
-      <span className="title">Tapis (bb) :</span>
-      <div className="number-of-bigs-choices">
-        {bigStacksChoices.map((choice) => (
-          <Button
-            key={choice}
-            onClick={() => setNumberOfBigs(choice)}
-            variant="outline-light"
-            active={numberOfBigs === choice}
-            className="numberOfBigs-btn"
+    <>
+      <div
+        id="bb-zone"
+        className="flex-row-jc-e"
+        onKeyPress={(e) => keypress(e)}
+        onWheel={(e) => callChangeIndex(e)}
+        tabIndex="0"
+      >
+        <div className="title mr-a jc-c">
+          Tapis (bb) : {stackChoices[selectedIndex]}
+        </div>
+        {stackChoices.map((element, i) => (
+          <div
+            className={`"blind-digit" ${
+              stackChoices[selectedIndex] === element && "title"
+            }`}
+            key={element}
+            onClick={() => chooseNumberOfBigs(element, i)}
           >
-            {choice}
-          </Button>
+            {element}
+          </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
