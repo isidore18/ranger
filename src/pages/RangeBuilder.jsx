@@ -5,12 +5,19 @@ import BuilderGrid from "../components/BuilderGrid";
 
 const hands = Object.values(handsData)
   .map((element) => element)
-  .flat();
+  .flat()
+  .map((e) => {
+    e.isRaiseHand = false;
+    e.isAllinHand = false;
+    e.isCallHand = false;
+    return e;
+  });
 
 export default function RangeBuilderApp() {
   const [selectedCombos, setSelectedCombos] = useState([]);
 
   const updateSelectedCombos = (combo, bool = false) => {
+    console.log("update", combo);
     if (!bool && selectedCombos.includes(combo)) {
       setSelectedCombos(selectedCombos.filter((element) => element !== combo));
       return;
@@ -78,6 +85,7 @@ export default function RangeBuilderApp() {
         selectHighCard={selectHighCard}
         selectPockets={selectPockets}
         exportUserInfo={exportUserInfo}
+        hands={hands}
       />
     </>
   );

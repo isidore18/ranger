@@ -11,6 +11,7 @@ export default function BuilderGrid({
   selectPockets,
   selectHighCard,
   exportUserInfo,
+  hands,
 }) {
   const [hoverMode, setHoverMode] = useState(false);
   const [action, setAction] = useState("isRaiseHand");
@@ -56,10 +57,6 @@ export default function BuilderGrid({
     );
   };
 
-  function setNewAction(action) {
-    setAction(action);
-  }
-
   return (
     <div className={"range-builder-container"}>
       <div>
@@ -73,7 +70,7 @@ export default function BuilderGrid({
           />
         </Form>
         <Form>
-          <div key={`default-radio`} className="mb-3">
+          <div key={`default-radio`} className="mb-3 flex-row jcse">
             <Form.Check
               type={"radio"}
               id={`default-radio-raise`}
@@ -106,18 +103,17 @@ export default function BuilderGrid({
         </div>
       </div>
       <div className="handgrid">
-        {Object.values(handsData).map((element) => {
-          return element.map((e) => {
-            return (
-              <HandSquareComponentForBuilder
-                hand={e}
-                key={e.hand}
-                updateSelectedCombos={setSelectedCombos}
-                hoverMode={hoverMode}
-                selected={selectedCombos.map((el) => el.hand).includes(e.hand)}
-              />
-            );
-          });
+        {hands.map((e) => {
+          return (
+            <HandSquareComponentForBuilder
+              hand={e}
+              key={e.hand}
+              updateSelectedCombos={setSelectedCombos}
+              hoverMode={hoverMode}
+              selected={selectedCombos.map((el) => el.hand).includes(e.hand)}
+              action={action}
+            />
+          );
         })}
       </div>
 
